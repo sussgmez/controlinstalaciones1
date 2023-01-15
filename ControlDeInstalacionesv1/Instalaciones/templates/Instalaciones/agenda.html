@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Section Agenda-->
+<section class="agenda">
+    <div class="header-agenda">
+        <h1>Agenda del día: {{ fecha }}</h1>
+        <h2>*Tienes cambios por guardar*</h2>
+        <form id="cambiar_dia" action="" method="get">
+            <input type="date" name="fecha" id="dia_solicitado" class="input-selectday" value="{{ fecha }}">
+        </form>
+    </div>
+    <div class="cont-agenda">
+        <table class="tb-horas">
+            <tr><th>Hora</th></tr>
+            <tr><td>8:30</td></tr>
+            <tr><td>10:30</td></tr> 
+            <tr><td>12:30</td></tr>
+            <tr><td>14:30</td></tr>
+            <tr><td>16:30</td></tr>
+        </table>
+        <table class="tb-agenda">
+            <tr class="tr-header">
+                <th class="tecnico">Henry</th>
+                <th class="tecnico">Johan</th>
+                <th class="tecnico">Jesús</th>
+                <th class="tecnico">Maikel</th>
+                <th class="tecnico">Yenkis</th>
+            </tr>
+        </table>
+        <div class="cont-insts-pendientes">
+            <button class="btn-anadirinstalacion">Añadir instalacion +</button>
+            <form action="../csv/" id="form-csv" method="post">
+                {% csrf_token %}
+                <input id="load-csv" type="file" accept=".csv" name="file_csv">
+            </form>
+            <div class="instalaciones-pendientes"></div>
+            <form action="save/" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="fecha" value="{{ fecha }}">
+                <input id="input-cambios" type="hidden" name="cambios" value="">
+                <button class="btn-save-changes">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+    var url_fecha = "{{ fecha }}"
+</script>
+{% endblock content %}
+    

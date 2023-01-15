@@ -1,0 +1,221 @@
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, p {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Header */
+.header-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1E1E1E;
+}
+.header-body .enlace-navbar {
+  font-family: "Alatsi", sans-serif;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 0 20px;
+  transition: color 0.1s;
+}
+.header-body .enlace-navbar:hover {
+  color: #FFA149;
+}
+.header-body .url-active {
+  color: #FFA149;
+}
+
+/* Section agenda */
+.agenda {
+  padding: 30px 20px;
+}
+.agenda .header-agenda {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px 40px;
+}
+.agenda .header-agenda h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.agenda .header-agenda .input-selectday {
+  text-align: center;
+  height: 100%;
+  width: 160px;
+  border-radius: 6px;
+  font-family: "Open Sans", sans-serif;
+}
+.agenda .header-agenda .btn-selectday {
+  padding: 10px 40px;
+  background-color: #1E1E1E;
+  border: none;
+  border-radius: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 14px;
+}
+.agenda .cont-agenda {
+  display: flex;
+  gap: 20px;
+}
+
+.tb-horas {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: end;
+}
+.tb-horas th {
+  height: 60px;
+}
+.tb-horas td {
+  height: 100px;
+}
+
+.tb-agenda {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  border-collapse: collapse;
+}
+.tb-agenda th {
+  height: 60px;
+  width: 20%;
+  background-color: #FFBE83;
+  font-weight: 400;
+  font-size: 20px;
+}
+.tb-agenda th:first-child {
+  border-radius: 6px 0 0 0;
+}
+.tb-agenda th:last-child {
+  border-radius: 0 6px 0 0;
+}
+.tb-agenda td {
+  height: 100px;
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #FFF;
+  background-color: #FFEDDD;
+}
+.tb-agenda td .btn-asignar {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #FFD6B0;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #FFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+.tb-agenda td:hover .btn-asignar {
+  display: block;
+}
+.tb-agenda .instalacion-asignada {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  background-color: #FFF;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.2s;
+}
+.tb-agenda .instalacion-asignada:hover {
+  bottom: 4px;
+  box-shadow: 0 4px;
+  border: 1px solid #1E1E1E;
+}
+.tb-agenda .instalacion-asignada:hover .btn-remove {
+  display: block;
+}
+.tb-agenda .instalacion-asignada .btn-remove {
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.cont-insts-pendientes {
+  width: 35%;
+}
+.cont-insts-pendientes .btn-anadirinstalacion {
+  background-color: #FFA149;
+  color: #FFF;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-family: "Alatsi", sans-serif;
+  font-size: 18px;
+  padding: 4px 20px;
+  margin-bottom: 10px;
+}
+.cont-insts-pendientes .btn-anadirinstalacion:hover {
+  background-color: #FFF;
+  border: 2px solid #FFA149;
+  color: #FFA149;
+}
+.cont-insts-pendientes .instalaciones-pendientes {
+  min-height: 80px;
+  max-height: 460px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #1E1E1E;
+  border-radius: 6px;
+  overflow-y: overlay;
+}
+.cont-insts-pendientes .instalacion-pendiente {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #FFF;
+  border: 1px solid #FFA149;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+.cont-insts-pendientes .instalacion-pendiente:last-child {
+  margin-bottom: 0;
+}
+.cont-insts-pendientes .instalacion-pendiente:hover {
+  background-color: #FFEDDD;
+}
+.cont-insts-pendientes .selected-instalacion {
+  background-color: #FFEDDD;
+}
+.cont-insts-pendientes .btn-save-changes {
+  width: 100%;
+  padding: 10px;
+  background-color: #18a860;
+  color: #FFF;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-family: "Alatsi", sans-serif;
+  font-size: 24px;
+}
+.cont-insts-pendientes .btn-save-changes:hover {
+  background-color: #FFF;
+  border: 2px solid #18a860;
+  color: #18a860;
+}
+
+/*# sourceMappingURL=style.css.map */

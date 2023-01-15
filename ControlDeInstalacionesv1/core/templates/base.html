@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Alatsi[400], OpenSans[300,400,700]-->
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--Hoja de estilo-->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <title>ctrl|inst - Inicio</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="header-body">
+        <a href="index.html"><div class="brand"><img src="{% static 'core/img/logo.png' %}" alt=""></div></a>
+        <div class="navbar">
+            <a href="" class="enlace-navbar">Agenda</a>
+            <a href="" class="enlace-navbar">Instalaciones</a>
+        </div>
+    </header>
+    {% block content %}  
+    {% endblock content %}
+    <!--Archivo javascript-->
+    <script src="{% static 'core/js/main.js' %}"></script>
+</body>
+</html>
